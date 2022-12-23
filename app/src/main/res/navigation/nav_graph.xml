@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/discoverFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.codebox.podcaster.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/recordingFragment"
+        android:name="com.codebox.podcaster.ui.recordingFlow.recording.RecordingFragment"
+        android:label="fragment_recording"
+        tools:layout="@layout/fragment_recording">
+        <action
+            android:id="@+id/action_recordingFragment_to_saveAsSegmentFragment"
+            app:destination="@id/saveAsSegmentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/discoverFragment"
+        android:name="com.codebox.podcaster.DiscoverFragment"
+        android:label="fragment_discover"
+        tools:layout="@layout/fragment_discover">
+        <action
+            android:id="@+id/action_discoverFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_discoverFragment_to_editingFragment"
+            app:destination="@id/editingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/libraryFragment"
+        android:name="com.codebox.podcaster.LibraryFragment"
+        android:label="fragment_library"
+        tools:layout="@layout/fragment_library" />
+    <fragment
+        android:id="@+id/editingFragment"
+        android:name="com.codebox.podcaster.ui.recordingFlow.editing.EditingFragment"
+        android:label="fragment_editing"
+        tools:layout="@layout/fragment_editing">
+        <argument
+            android:name="segmentWithFlags"
+            app:argType="com.codebox.podcaster.storage.db.app.segment.SegmentWithFlags" />
+        <action
+            android:id="@+id/action_editingFragment_to_uploadTestFragment"
+            app:destination="@id/uploadTestFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/uploadTestFragment"
+        android:name="com.codebox.podcaster.ui.upload.UploadTestFragment"
+        android:label="fragment_upload_test"
+        tools:layout="@layout/fragment_upload_test">
+        <argument
+            android:name="segmentWithFlags"
+            app:argType="com.codebox.podcaster.storage.db.app.segment.SegmentWithFlags" />
+    </fragment>
+    <dialog
+        android:id="@+id/singleSelectionBottomSheetFragment"
+        android:name="com.codebox.podcaster.ui.util.selection.singleSelection.SingleSelectionBottomSheetFragment"
+        android:label="fragment_single_selection_bottomSheet">
+        <argument
+            android:name="selectableItems"
+            app:argType="com.codebox.podcaster.ui.util.selection.data.SelectableItem[]" />
+        <argument
+            android:name="header"
+            app:argType="com.codebox.podcaster.ui.util.selection.data.header.Header" />
+    </dialog>
+    <action
+        android:id="@+id/action_global_singleSelectionBottomSheetFragment"
+        app:destination="@id/singleSelectionBottomSheetFragment" />
+    <fragment
+        android:id="@+id/saveAsSegmentFragment"
+        android:name="com.codebox.podcaster.SaveAsSegmentFragment"
+        android:label="fragment_save_as_segment"
+        tools:layout="@layout/fragment_save_as_segment" >
+        <argument
+            android:name="segmentWithFlags"
+            app:argType="com.codebox.podcaster.storage.db.app.segment.SegmentWithFlags" />
+    </fragment>
+</navigation>

@@ -1,0 +1,142 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+
+android {
+    compileSdkVersion intProperty("compileSdkVersion")
+    buildToolsVersion stringProperty("buildToolsVersion")
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    defaultConfig {
+        applicationId "com.codebox.podcaster"
+        minSdkVersion intProperty("minSdkVersion")
+        targetSdkVersion intProperty("targetSdkVersion")
+        versionCode intProperty("versionCode")
+        versionName stringProperty("versionName")
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+
+        release {
+            /*storeFile file(project.properties.RELEASE_STORE_FILE)
+            storePassword project.properties.RELEASE_STORE_PASSWORD
+            keyAlias project.properties.RELEASE_KEY_ALIAS
+            keyPassword project.properties.RELEASE_KEY_PASSWORD*/
+        }
+        debug {
+            storeFile file(stringProperty("debugStoreFile"))
+            storePassword stringProperty("debugStorePassword")
+            keyAlias stringProperty("debugKeyAlias")
+            keyPassword stringProperty("debugKeyPassword")
+        }
+    }
+
+    buildTypes {
+
+        def TUS_URL = "TUS_BASE_URL"
+        def ENABLE_NETWORK_LOGGING = "ENABLE_NETWORK_LOGGING"
+
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField "String", TUS_URL, stringProperty("releaseTusUrl")
+            buildConfigField "boolean", ENABLE_NETWORK_LOGGING, "false"
+        }
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+            manifestPlaceholders.enable_fusion = true
+
+            buildConfigField "String", TUS_URL, stringProperty("debugTusUrl")
+            buildConfigField "boolean", ENABLE_NETWORK_LOGGING, "true"
+        }
+
+        staging {
+            initWith debug
+
+            buildConfigField "String", TUS_URL, stringProperty("stagingTusUrl")
+            buildConfigField "boolean", ENABLE_NETWORK_LOGGING, "true"
+        }
+
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+
+    implementation deps.kotlinstdlib
+    //implementation deps.leakcanary
+    implementation deps.coroutines
+
+    implementation androidx.core
+    implementation androidx.appcompat
+    implementation androidx.constraintlayout
+    implementation androidx.activity
+    implementation androidx.fragment
+    kapt "org.xerial:sqlite-jdbc:3.34.0"
+    implementation androidx.roomruntime
+    implementation 'androidx.recyclerview:recyclerview:1.2.0'
+    kapt androidx.roomcompiler
+    implementation androidx.roomktx
+    implementation androidx.navfragment
+    implementation androidx.navui
+
+    implementation design.material
+    implementation google.hilt
+    kapt google.hiltcompiler
+
+    implementation deps.tus
+
+
+
+    //implementation 'com.writingminds:FFmpegAndroid:0.3.2'
+    //implementation 'com.arthenica:mobile-ffmpeg-full:4.4.LTS'
+    implementation deps.ffmpeg
+
+
+    implementation google.gson
+    implementation network.retrofit
+    implementation network.convertergson
+    implementation network.convertermoshi
+    implementation network.logginginterceptor
+
+    implementation network.volley
+    implementation androidx.legacysupport
+
+    implementation androidx.multidex
+
+
+    testImplementation test.junit
+    testImplementation test.mockitokotlin
+    testImplementation test.coroutines
+
+    androidTestImplementation test.extjunit
+    androidTestImplementation test.espresso
+    androidTestImplementation test.mockitoandroid
+
+
+}

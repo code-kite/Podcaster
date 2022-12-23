@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/list_item_spacing"
+    android:layout_marginTop="30dp"
+    android:layout_marginEnd="@dimen/list_item_spacing"
+    android:layout_marginBottom="30dp"
+    android:textColor="@color/colorOnSurface"
+    android:textSize="20sp"
+    android:textStyle="bold"
+    tools:text="Hello" />

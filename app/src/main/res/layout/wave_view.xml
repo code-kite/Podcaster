@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/waveViewContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerFlag"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/flag_recycler_height" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerWave"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/wave_recycler_height" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/slider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="@dimen/flag_recycler_height"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="@dimen/wave_recycler_height"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/primaryColor" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:backgroundTint="@color/primaryColor" />
+
+    </LinearLayout>
+
+</FrameLayout>

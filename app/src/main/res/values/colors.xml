@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primaryColor">#ff375f</color>
+    <color name="primaryLightColor">#ff728c</color>
+    <color name="primaryDarkColor">#c50036</color>
+    <color name="primaryTextColor">#000000</color>
+    <color name="backgroundColor">#FFFFFF</color>
+
+    <color name="errorColor">#B00020</color>
+
+    <color name="surfaceColor">#FFFF</color>
+
+    <color name="colorOnPrimary">#FFFFFF</color>
+
+    <color name="colorOnBackground">#000000</color>
+
+    <color name="colorOnError">#FFFFFF</color>
+
+    <color name="colorOnSurface">#000000</color>
+
+    <color name="bottomNavColor">#FFFFFF</color>
+
+    <color name="stopRecordingColor">#e2a90e</color>
+    <color name="secFabColor">#323232</color>
+
+
+
+    <color name="wave_gradient_1">#64ff375f</color>
+    <!--<color name="wave_gradient_2">#008888</color>-->
+    <color name="wave_gradient_2">#1dff375f</color>
+    <color name="wave_gradient_3">#00ff375f</color>
+    <color name="wave_gradient_4">#ff375f</color>
+    <color name="selection_start_end_color">#ff005a</color>
+
+
+    <color name="waveform_selected">#1dff375f</color>
+    <color name="waveform_unselected">#484848</color>
+    <color name="waveform_unselected_bkgnd_overlay">#64ff4980</color>
+
+    <!--<color name="waveform_selected">#33b5e5</color>
+    <color name="waveform_unselected">#195a72</color>
+    <color name="waveform_unselected_bkgnd_overlay">#0a242d</color>-->
+    <color name="selection_border">#ffffff</color>
+    <color name="playback_indicator">#ff375f</color>
+    <color name="grid_line">#66ffffff</color>
+    <color name="timecode">#ddffffdd</color>
+    <color name="timecode_shadow">#aa000000</color>
+
+    <color name="type_bkgnd_alarm">#88880000</color>
+    <color name="type_bkgnd_ringtone">#88008888</color>
+    <color name="type_bkgnd_notification">#88666600</color>
+    <color name="type_bkgnd_music">#88000000</color>
+    <color name="type_bkgnd_unsupported">#88cccccc</color>
+</resources>

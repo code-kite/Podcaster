@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="wave_element_width">2dp</dimen>
+    <dimen name="wave_recycler_height">150dp</dimen>
+    <dimen name="flag_recycler_height">20dp</dimen>
+    <dimen name="wave_marker_height">56dp</dimen>
+
+
+    <dimen name="list_item_spacing">30dp</dimen>
+    <dimen name="list_item_spacing_half">15dp</dimen>
+</resources>

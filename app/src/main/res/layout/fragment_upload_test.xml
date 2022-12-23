@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.codebox.podcaster.ui.upload.UploadTestFragment">
+
+    <EditText
+        android:id="@+id/etPodcastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Random Podcast Name"
+        android:hint="Podcast Name" />
+
+    <EditText
+        android:id="@+id/etEpisodeName"
+        android:layout_width="match_parent"
+        android:text="Random Episode Name"
+        android:layout_height="wrap_content"
+        android:hint="Episode Name" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="TUS URL"
+        android:id="@+id/etTusUrl"
+        android:text="https://tus-go-prod.codebox.com/files"/>
+
+    <!-- "https://tus-gopod-stage.codebox.com/files" -->
+
+    <Button
+        android:id="@+id/btnUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload" />
+
+</LinearLayout>

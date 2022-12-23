@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="backgroundColor">#1b1b1b</color>
+    <color name="surfaceColor">#242424</color>
+    <color name="colorOnBackground">#FFFFFF</color>
+    <color name="colorOnSurface">#FFFFFF</color>
+
+    <color name="bottomNavColor">#1b1b1b</color>
+</resources>

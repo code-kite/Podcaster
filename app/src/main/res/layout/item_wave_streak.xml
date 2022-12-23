@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/wave_element_width"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/element"
+        android:layout_width="2px"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/colorOnBackground" />
+
+</FrameLayout>
